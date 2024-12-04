@@ -177,3 +177,20 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
+
+// send-email
+
+document.getElementById('send-email').addEventListener('click', function(e) {
+  e.preventDefault();
+
+  // Get form values
+  var name = document.getElementById('name').value;
+  var message = document.getElementById('message').value;
+  var email = document.getElementById('email').value;
+
+  // Create mailto URL
+  var mailtoLink = 'mailto:balakrishnamoorthy77@gmail.com?subject=' + encodeURIComponent(name) + '&body=' + encodeURIComponent(message);
+
+  // Open email client with pre-filled data
+  window.location.href = mailtoLink;
+});
